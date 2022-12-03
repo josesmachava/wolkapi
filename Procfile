@@ -1,2 +1,2 @@
 release: python manage.py migrate
-web: gunicorn kutiva.wsgi --log-file -
+web: gunicorn wolk.wsgi --log-file -
