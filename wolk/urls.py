@@ -38,10 +38,12 @@ api = NinjaAPI()
 @api.post("/upload")
 def upload(request, file: UploadedFile = File(...)):
     s3 = boto3.client('s3',
-                      aws_access_key_id='AKIAVTSRQIYMSJDYFYIL',
-                      aws_secret_access_key='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',
+                      aws_access_key_id=os.getenv('AWS_ACCESS_KEY_ID'),
+                      aws_secret_access_key=os.getenv('AWS_SECRET_ACCESS_KEY'),
                       region_name="us-east-1"
                       )
+    sid = os.getenv('TWILIO_ACCOUNT_SID')
+    token = os.getenv('TWILIO_AUTH_TOKEN')
 
     name = get_random_string(8).lower()
     print(name.lower())
