@@ -43,7 +43,7 @@ def upload(request, file: UploadedFile = File(...)):
                       region_name="us-east-1"
                       )
 
-    name = get_random_string(10).lower()
+    name = get_random_string(8).lower()
     print(name.lower())
     with open('index.html', 'wb+') as destination:
         for chunk in file.chunks():
