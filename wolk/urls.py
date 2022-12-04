@@ -78,7 +78,7 @@ def upload(request, file: UploadedFile = File(...)):
 
                    }
                    )
-    website_url = f'https://{name}.s3.amazonaws.com/index.html'
+    website_url = f'https://{name}.website.eu-central-1.amazonaws.com'
     data = file.read()
     return {
         "url": website_url
